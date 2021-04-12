@@ -4,7 +4,22 @@ const swiper1 = document.querySelector(".swiper-container"),
 	menu = document.querySelector(".menu"),
 	close = document.querySelector(".menu__close-btn"),
 	playButtonsFirst = document.querySelectorAll(".slider__play"),
-	playButtonsFeatured = document.querySelectorAll(".slide-play");
+	playButtonsFeatured = document.querySelectorAll(".slide-play"),
+	scrollBtn = document.querySelector(".scroll-btn");
+
+const checkYOffset = () => {
+	if (window.pageYOffset > 800) {
+    scrollBtn.style.opacity = '1';
+		scrollBtn.style.transform = 'translateY(0)';
+  } else {
+		scrollBtn.style.opacity = '0';
+		scrollBtn.style.transform = 'translateY(100px)';
+	}
+}
+window.addEventListener('scroll', checkYOffset);
+scrollBtn.addEventListener('click', () => {
+	window.scrollTo(0,0);
+})
 
 let swiperSlide1 = new Swiper(swiper1, {
 	centeredSlides: true,
@@ -20,7 +35,8 @@ let swiperSlide1 = new Swiper(swiper1, {
     prevEl: '.btn-left',
   },
 });
-swiperSlide1.on('transitionEnd', function () {
+swiperSlide1.on('slideChangeTransitionEnd', function () {
+	// debugger;
   let videos = document.querySelectorAll('.first__slider video');
 	videos.forEach(el => {
 		el.pause();
@@ -50,6 +66,12 @@ swiperSlide2.on('transitionEnd', function () {
 
 burger.addEventListener("click", () => {
 	menu.classList.add("menu--visible");
+	const menuLinks = document.querySelectorAll(".menu__link");
+	menuLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			menu.classList.remove("menu--visible");
+		})
+	})
 });
 close.addEventListener("click", () => {
 	menu.classList.remove("menu--visible");
@@ -58,11 +80,12 @@ close.addEventListener("click", () => {
 playButtonsFirst.forEach(el => {
 	el.addEventListener('click', e => {
 		let video = e.currentTarget.closest(".main-slider__media").querySelector("video");
+		console.log(video)
 		video.play();
 		e.currentTarget.style.display = "none";
-		setTimeout(() => {
-			video.volume = 0.5;
-		}, 1000)
+		// setTimeout(() => {
+		// 	video.volume = 0.5;
+		// }, 1000)
 	})
 })
 playButtonsFeatured.forEach(el => {
@@ -77,6 +100,7 @@ playButtonsFeatured.forEach(el => {
 		}, 1000)
 	})
 })
+
 // inputMask
 let selector = document.querySelectorAll('input[type=tel]');
 
