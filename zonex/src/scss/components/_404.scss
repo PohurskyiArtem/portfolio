@@ -1,0 +1,48 @@
+.page-404 {
+  height: 100vh;
+  font-size: 50px;
+  background-color: #ccc;
+  user-select: none;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 10em;
+  }
+
+  &__descr {
+    font-size: 1.5em;
+  }
+
+  &__link {
+    border-bottom: 2px solid var(--color-dark);
+    padding-bottom: 10px;
+    font-size: 1em;
+    transition: border 0.3s, color 0.3s;
+
+    &:hover {
+      border-bottom: 2px solid var(--color-tundora);
+      color: var(--color-tundora);
+      transition: border 0.3s, color 0.3s;
+    }
+  }
+
+  @include md {
+    font-size: 35px;
+  }
+
+  @include sm {
+    font-size: 25px;
+  }
+
+  @include xs {
+    font-size: 15px;
+  }
+}

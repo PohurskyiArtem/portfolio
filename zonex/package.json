@@ -39,6 +39,6 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "simplebar": "^5.3.0"
+    "simplebar": "^5.3.2"
   }
 }
