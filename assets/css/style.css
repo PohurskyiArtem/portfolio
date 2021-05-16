@@ -343,6 +343,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 #home {
+	position: relative;
 	background: url(../images/cover.jpg);
 	background-color: #222;
 	background-attachment: fixed;
@@ -385,6 +386,87 @@ textarea.form-control {
     font-weight: 800;
 }
 
+/* ---------------------------------------------- /*
+ * Custom select
+/* ---------------------------------------------- */
+
+.custom-select {
+	position: absolute;
+	top: 20px;
+	right: 50px;
+	z-index: 100;
+	width: 20px;
+	font-weight: 700;
+	font-size: 16px;
+	user-select: none;
+	cursor: pointer;
+}
+  
+.custom-select__dropdown {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: calc(100% + 2px);
+	z-index: 20;
+	width: 100%;
+}
+
+.custom-select__list{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.custom-select__item {
+	opacity: 1;
+	transition: opacity 0.3s;
+	cursor: pointer;
+}
+  
+.custom-select__item:not(:last-child) {
+	margin-bottom: 3px;
+}
+  
+.custom-select__item:hover {
+	opacity: 0.6;
+	transition: opacity 0.3s;
+}
+
+.custom-select__top {
+    position: relative;
+	border-bottom: 1px solid #fff;
+    padding-right: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.custom-select__top::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 12px;
+      margin-top: -6px;
+      width: 16px;
+      height: 16px;
+      background-image: url("../images/angle-down.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+.custom-select--open .custom-select__top::after  {
+    transform: rotate(180deg); 
+}
+
+.custom-select--open .custom-select__dropdown {
+    display: block;
+}
+
+/* ---------------------------------------------- /*
+ * Servise
+/* ---------------------------------------------- */
+
+
 .start {
 	font-family: Raleway, "Times New Roman", Times, sans-serif;
 	font-size: 16px;
@@ -392,10 +474,6 @@ textarea.form-control {
 	text-transform: none;
 	margin: 15px 0;
 }
-
-/* ---------------------------------------------- /*
- * Servise
-/* ---------------------------------------------- */
 
 .iconbox {
 	background: #fff;
@@ -507,6 +585,10 @@ textarea.form-control {
 .social-links a:hover {
 	border: 1px solid rgba(255, 255, 255, .5);
 	color: rgba(255, 255, 255, .8);
+}
+
+.portfolio-link {
+	display: block;
 }
 
 /* ---------------------------------------------- /*
@@ -732,7 +814,8 @@ textarea.form-control {
 	margin: 10px 1%;
 	min-width: 100%;
 	max-width: 100%;
-	height: auto;
+	min-height: 225px;
+	max-height: 225px;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
