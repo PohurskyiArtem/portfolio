@@ -75,9 +75,9 @@ const langArr = {
         "ua": "Wordpress"
     },
     "spec-title4": {
-        "ru": "text",
-        "en": "text",
-        "ua": "text"
+        "ru": "Правки",
+        "en": "Edits",
+        "ua": "Правки"
     },
     "spec-descr1": {
         "ru": "Валидная, кроссбраузерная, адаптивная и оптимизированная вёрстка лендингов, многостраничных сайтов и интернет-магазинов",
@@ -95,13 +95,43 @@ const langArr = {
         "ua": "Створення та інтегрування готових веб-сайтів в CMS Wordpress"
     },
     "spec-descr4": {
-        "ru": "text",
-        "en": "text",
-        "ua": "text"
+        "ru": "Внесение правок в Ваши веб-сайты",
+        "en": "Making edits to your sites",
+        "ua": "Внесення правок в Ваші веб-сайти"
     },
     "portfolio": {
         "ru": "Мои работы",
         "en": "My Works",
         "ua": "Мої роботи"
+    },
+    "work-1--span": {
+        "ru": "Мир детства",
+        "en": "Childhood",
+        "ua": "Childhood"
+    },
+    "work-1--descr": {
+        "ru": "Магазин детских игрушек на CMS Wordpress",
+        "en": "Children's toys store on CMS Wordpress",
+        "ua": "Магазин дитячих іграшок на CMS Wordpress"
+    },
+    "work-2--descr": {
+        "ru": "Страница агенства по созданию веб-сайтов",
+        "en": "Website business card of the agency for creating web sites",
+        "ua": "Сторінка агенства по створенню веб-сайтів"
+    },
+    "work-3--descr": {
+        "ru": "Интернет-магазин одежды",
+        "en": "Online clothing store",
+        "ua": "Інтернет-магазин одягу"
+    },
+    "work-4--descr": {
+        "ru": "Веб-сайт туристического агенства",
+        "en": "Travel agency website",
+        "ua":"Веб-сайт туристичного агенства"
+    },
+    "work-5--descr": {
+        "ru": "Креативное агентство для успешных брендов",
+        "en": "A creative agency for redemptive brands",
+        "ua": "Креативне агенство для успішних брендів"
     }
 }
