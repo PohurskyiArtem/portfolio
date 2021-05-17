@@ -276,9 +276,39 @@ textarea.form-control {
 }
 
 .pfblock-subtitle {
+	position: relative;
+	padding: 0 40px;
 	font-family: Raleway, "Times New Roman", Times, sans-serif;
 	font-style: normal;
 	font-size: 18px;
+}
+
+.pfblock-subtitle::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	background-image: url("../images/quote.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+.pfblock-subtitle::after {
+	position: absolute;
+	content: "";
+	right: 0;
+	bottom: 0;
+	width: 20px;
+	height: 20px;
+	background-image: url("../images/quote.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transform: rotate(180deg);
 }
 
 .pfblock-line {

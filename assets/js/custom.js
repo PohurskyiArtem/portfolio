@@ -2,21 +2,31 @@ var allLang = ['en', 'ua', 'ru'];
 
 function changeURLLanguage (lang) {
 	location.href = window.location.pathname + "#" + lang;
+  localStorage.setItem("lang", lang);
 	location.reload();
 }
 
 function changeLanguage () {
-	var hash = window.location.hash.substr(1);
-	if(!allLang.includes(hash)) {
-		location.href = window.location.pathname + "#en";
-		location.reload();
-	}
-	document.querySelector(".custom-select__top").textContent = hash;
+  var lang = localStorage.getItem("lang");
+  if(lang !== null) {
+    document.querySelector(".custom-select__top").textContent = lang;
+    location.href = window.location.pathname + "#" + lang;
 
-	for (let key in langArr) {
-		console.log(document.querySelector(".lang-" + key).textContent)
-		document.querySelector(".lang-" + key).textContent = langArr[key][hash];
-	}
+    for (let key in langArr) {
+      document.querySelector(".lang-" + key).textContent = langArr[key][lang];
+    }
+  } else {
+    var hash = window.location.hash.substr(1);
+    if(!allLang.includes(hash)) {
+      location.href = window.location.pathname + "#en";
+      location.reload();
+    }
+    document.querySelector(".custom-select__top").textContent = hash;
+  
+    for (let key in langArr) {
+      document.querySelector(".lang-" + key).textContent = langArr[key][hash];
+    }
+  }
 }
 
 (function ($) {
